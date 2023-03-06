@@ -1,11 +1,12 @@
-query LaunchDetail {
-  launch(id: "5eb87cd9ffd86e000604b32a") {
+query LaunchDetail($id: ID!) {
+  launch(id: $id) {
     id
     details
     is_tentative
     launch_date_utc
     links {
       wikipedia
+      article_link
     }
     mission_id
     mission_name

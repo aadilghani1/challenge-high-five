@@ -7,7 +7,7 @@ export const LaunchListContainer = () => {
   const { data, loading } = useQuery(LaunchDocument);
 
   if (loading) {
-    return <div>Users loading...</div>;
+    return <div>Launches loading...</div>;
   }
 
   return <LaunchListMapper launches={data.launches} />;
