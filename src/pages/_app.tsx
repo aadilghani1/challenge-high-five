@@ -1,7 +1,7 @@
 import { NextPage } from 'next';
 import { AppProps } from 'next/app';
 import { ApolloProvider } from '@apollo/client';
-
+import '../styles/globals.css';
 import 'normalize.css/normalize.css';
 import { useApollo } from '../lib/apollo';
 

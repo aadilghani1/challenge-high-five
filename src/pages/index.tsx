@@ -1,25 +1,31 @@
-import { NextPage } from 'next';
+import { GetServerSidePropsContext, NextPage } from 'next';
 import Link from 'next/link';
 import { useApolloClient } from '@apollo/client';
+import Layout from '../components/Layout';
+import { addApolloState, initializeApollo } from '../lib/apollo';
+import { LaunchDocument } from '../graphql/queries/launch.graphql.interface';
+import { LaunchListContainer } from '../components/LaunchList/LaunchListContainer';
+import { Launch } from '../graphql/__generated__/schema.graphql';
 
-const IndexPage: NextPage = () => {
-  const apolloClient = useApolloClient();
+export const getServerSideProps = async (ctx: GetServerSidePropsContext) => {
+  const apolloClient = initializeApollo(null, ctx);
 
+  const {
+    data: { launches },
+  } = await apolloClient.query({ query: LaunchDocument });
+
+  return addApolloState(apolloClient, {
+    props: {
+      launches: { launches },
+    },
+  });
+};
+
+const IndexPage: NextPage<{ launches: Launch }> = ({ launches }) => {
   return (
-    <section>
-      <h1>Hello, you're using Apollo Client {apolloClient.version}</h1>
-      <p>Here are few examples of how to use it:</p>
-      <nav>
-        <ul>
-          <li>
-            <Link href="/users-csr">Client-Side Rendering</Link>
-          </li>
-          <li>
-            <Link href="/users-ssr">Server-Side Rendering</Link>
-          </li>
-        </ul>
-      </nav>
-    </section>
+    <Layout>
+      <LaunchListContainer />
+    </Layout>
   );
 };
 

@@ -1,0 +1,28 @@
+query LaunchDetail {
+  launch(id: "5eb87cd9ffd86e000604b32a") {
+    id
+    details
+    is_tentative
+    launch_date_utc
+    links {
+      wikipedia
+    }
+    mission_id
+    mission_name
+    rocket {
+      rocket_name
+      rocket_type
+      fairings {
+        recovered
+        recovery_attempt
+        reused
+      }
+    }
+    static_fire_date_utc
+    telemetry {
+      flight_club
+    }
+    tentative_max_precision
+    upcoming
+  }
+}

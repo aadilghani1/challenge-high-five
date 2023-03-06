@@ -1,0 +1,8 @@
+query Launch {
+  launches(limit: 10) {
+    id
+    mission_name
+    details
+    launch_date_utc
+  }
+}
