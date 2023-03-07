@@ -1,6 +1,7 @@
 import { ApolloProvider } from '@apollo/client';
 import { NextPage } from 'next';
 import { AppProps } from 'next/app';
+import NextNProgress from 'nextjs-progressbar';
 import 'normalize.css/normalize.css';
 import { useState } from 'react';
 import LaunchContext from '../context/LaunchesContext';
@@ -19,6 +20,7 @@ const App: NextPage<AppProps> = ({ Component, pageProps }) => {
   return (
     <ApolloProvider client={apolloClient}>
       <LaunchContext.Provider value={{ launches, updateLaunchContext }}>
+        <NextNProgress />
         <Component {...pageProps} />
       </LaunchContext.Provider>
     </ApolloProvider>
