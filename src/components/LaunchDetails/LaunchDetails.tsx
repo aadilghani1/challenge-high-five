@@ -21,11 +21,11 @@ const LaunchDetails = ({ launch }: Props) => {
         <h4 className="text-lg">Rocket name: {launch.rocket.rocket_name}</h4>
         <ul className="list-disc list-inside flex flex-col space-y-2">
           <p className="font-semibold text-lg">Rocket fairings:</p>
-          <li>Recovered: {`${launch.rocket.fairings.recovered}`}</li>
+          <li>Recovered: {`${launch.rocket.fairings?.recovered}`}</li>
           <li>
-            Recovery Attempt: {`${launch.rocket.fairings.recovery_attempt}`}
+            Recovery Attempt: {`${launch.rocket.fairings?.recovery_attempt}`}
           </li>
-          <li>Reused: {`${launch.rocket.fairings.reused}`}</li>
+          <li>Reused: {`${launch.rocket.fairings?.reused}`}</li>
         </ul>
       </section>
       <hr />
