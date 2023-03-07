@@ -1,11 +1,9 @@
 import { GetServerSidePropsContext, NextPage } from 'next';
-import Link from 'next/link';
-import { useApolloClient } from '@apollo/client';
-import Layout from '../components/Layout';
-import { addApolloState, initializeApollo } from '../lib/apollo';
-import { LaunchDocument } from '../graphql/queries/launch.graphql.interface';
 import { LaunchListContainer } from '../components/LaunchList/LaunchListContainer';
+import Layout from '../components/Layout';
+import { LaunchDocument } from '../graphql/queries/launch.graphql.interface';
 import { Launch } from '../graphql/__generated__/schema.graphql';
+import { addApolloState, initializeApollo } from '../lib/apollo';
 
 export const getServerSideProps = async (ctx: GetServerSidePropsContext) => {
   const apolloClient = initializeApollo(null, ctx);

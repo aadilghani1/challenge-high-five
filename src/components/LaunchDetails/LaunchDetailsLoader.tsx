@@ -1,7 +1,6 @@
 import { useQuery } from '@apollo/client';
 import { FC } from 'react';
 
-import { LaunchDocument } from '../../graphql/queries/launch.graphql.interface';
 import { LaunchDetailDocument } from '../../graphql/queries/launchDetail.graphql.interface';
 import LaunchDetails from './LaunchDetails';
 

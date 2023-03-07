@@ -1,5 +1,5 @@
 query Launch {
-  launches(limit: 10) {
+  launches {
     id
     mission_name
     details

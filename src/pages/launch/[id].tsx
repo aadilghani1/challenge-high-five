@@ -1,5 +1,4 @@
 import { GetServerSidePropsContext, NextPage } from 'next';
-import React from 'react';
 import { LaunchDetailsLoader } from '../../components/LaunchDetails/LaunchDetailsLoader';
 import { LaunchDetailDocument } from '../../graphql/queries/launchDetail.graphql.interface';
 import { Launch } from '../../graphql/__generated__/schema.graphql';

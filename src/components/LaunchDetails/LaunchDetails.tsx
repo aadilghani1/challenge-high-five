@@ -1,5 +1,4 @@
 import Link from 'next/link';
-import React from 'react';
 import { Launch } from '../../graphql/__generated__/schema.graphql';
 
 type Props = {
